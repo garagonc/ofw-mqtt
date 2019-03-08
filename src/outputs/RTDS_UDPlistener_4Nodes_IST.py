@@ -1,3 +1,4 @@
+import struct
 
 from outputs.outputController import OutputController
 from utils.config_output import config as config_output
@@ -29,8 +30,9 @@ class RTDS_UDPlistener_4Nodes_IST:
 
     def receive(self, data):
         self.out = [0] * self.NumData
-        for i in range(0, self.NumData):
-            self.out[i] = data[i]
+        for i in range(0, 60):
+            #		print(tofloat(data[(4*i):(4+4*i)]))
+            self.out[i] = self.tofloat(data[(4 * i):(4 + 4 * i)])
         logger.info("received: "+str(self.out)+" type "+str(type(self.out)))
         self.share_senml()
 
@@ -48,6 +50,9 @@ class RTDS_UDPlistener_4Nodes_IST:
         logger.debug("data out: "+json.dumps(data_out, indent=4, sort_keys=True))
         self.output.publishController(data_out)
 
-
+    def tofloat(self, data):
+        x = struct.unpack('>f',data)[0]
+        # x = struct.unpack('>f', struct.pack('4B', *data))[0]
+        return x
 
 
