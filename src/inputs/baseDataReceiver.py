@@ -20,20 +20,22 @@ logger = logging.getLogger(__file__)
 
 class BaseDataReceiver(DataReceiver, ABC):
 
-    def __init__(self, topic_params):
+    def __init__(self, config_input):
 
         try:
-            super().__init__(topic_params)
+            super().__init__(config_input)
         except Exception as e:
             logger.error(e)
 
 
     def on_msg_received(self, payload):
         try:
+            logger.debug("payload "+str(payload))
             self.start_of_day = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0).timestamp()
             senml_data = json.loads(payload)
             formated_data = self.add_formated_data(senml_data)
             self.data.update(formated_data)
+            logger.debug("data "+str(self.data))
             self.data_update = True
         except Exception as e:
             logger.error(e)

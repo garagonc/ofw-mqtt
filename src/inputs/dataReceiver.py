@@ -31,14 +31,13 @@ class DataReceiver(ABC):
         self.port = None
         self.host_params = {}
 
-        if self.section is None:
-            self.section = "IO"
         self.setup()
-        if self.channel == "MQTT":
-                self.init_mqtt(self.topics)
+
+        self.init_mqtt(self.topics)
 
     def setup(self):
-        self.topics, self.host_params = self.get_internal_channel_params()
+        self.topics = self.get_internal_channel_params()
+
 
 
 
@@ -49,8 +48,14 @@ class DataReceiver(ABC):
             for k, v in self.topic_params.items():
                 if k == "topic":
                     topic_qos.append((v,1))
-                elif k == "mqtt.port":
+                elif k == "port":
                     self.port = v
+                elif k == "host":
+                    self.host = v
+            logger.debug("host "+str(self.host))
+            logger.debug("port "+str(self.port))
+            logger.debug("topic " + str(topic_qos))
+
 
             return topic_qos
 

@@ -11,6 +11,7 @@ import re
 
 import datetime
 from math import floor, ceil
+from inputs.genericDataReceiver import GenericDataReceiver
 
 logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s: %(message)s', level=logging.DEBUG)
 logger = logging.getLogger(__file__)
@@ -18,15 +19,24 @@ logger = logging.getLogger(__file__)
 
 class InputController:
 
-    def __init__(self, config):
+    def __init__(self, config_input=None):
         self.stop_request = False
-        self.config = config
+        self.config = config_input
 
+        self.start_receivers()
 
+    def start_receivers(self):
         self.internal_receiver = {}
+        for key, value in self.config.items():
+            #logger.debug("key " + str(key) + " value " + str(value))
+            for name, value2 in value.items():
+                #logger.debug("key2 "+str(key2)+" value2 "+str(value2))
+                for key3, value3 in value2.items():
+                    logger.debug("key3 " + str(key3) + " value3 " + str(value3))
+                    if key3 == "mqtt":
+                        self.internal_receiver[name]=GenericDataReceiver(value3)
 
-        self.internal_receiver[name] = GenericDataReceiver(True, prediction_topic, config, name,
-                                                                   self.id, self.required_buffer_data, self.dT_in_seconds)
+        #self.internal_receiver[name] = GenericDataReceiver()
 
 
 

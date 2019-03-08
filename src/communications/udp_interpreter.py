@@ -1,6 +1,7 @@
 import socket
 import logging
 from outputs.RTDS_UDPlistener_4Nodes_IST import RTDS_UDPlistener_4Nodes_IST as listener
+import pickle
 
 logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s: %(message)s', level=logging.DEBUG)
 logger = logging.getLogger(__file__)
@@ -17,7 +18,11 @@ class UDP_Interpreter:
 
 
     def send_message(self, message,ip_address,udp_port):
-        self.clientSock.sendto(message.encode('utf-8'),(ip_address,udp_port))
+        if isinstance(message,list):
+            message=pickle.dumps(message)
+            self.clientSock.sendto(message, (ip_address, udp_port))
+        else:
+            self.clientSock.sendto(message.encode('utf-8'),(ip_address,udp_port))
 
 
     def create_server(self, ip_address, udp_port):
@@ -34,6 +39,8 @@ class UDP_Interpreter:
         logger.debug("Starting UDP receive")
         while True:
             data, addr =self.serverSock.recvfrom(4096)
-            data=data.decode('utf-8')
+            logger.debug("type data: "+str(type(data)))
+            #data=data.decode('utf-8')
+            data=pickle.loads(data)
             logger.debug("Data received: "+str(data))
             self.listener.receive(data)
