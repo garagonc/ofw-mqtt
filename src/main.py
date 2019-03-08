@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     logger.info("Service started")
 
-    #input_controller = InputController(config)
+    input_controller = InputController(config)
 
 
     udp_object = udp()
