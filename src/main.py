@@ -35,17 +35,16 @@ if __name__ == '__main__':
 
     input_controller = InputController(config)
 
-    while True:
-        pass
 
     udp_object = udp()
     thread_udp_receive = Thread(target=udp_object.udp_receive)
     thread_udp_receive.start()
     logger.debug("Receive thread started")
-    thread_udp_send = Thread(target=send_udp_message(udp_object))
-    thread_udp_send.start()
+    #thread_udp_send = Thread(target=send_udp_message(udp_object))
+    #thread_udp_send.start()
     thread_udp_receive.join()
-    thread_udp_send.join()
+    #thread_udp_send.join()
+
 
 
     while True:
