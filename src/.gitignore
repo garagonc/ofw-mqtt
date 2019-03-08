@@ -95,12 +95,6 @@ ENV/
 .idea
 .idea/workspace.xml
 
-fronius/
-optimization/resources/
-prediction/resources/
-connector/resources/
-mock_data/resources/
-utils/*
 
 !utils/.gitkeep
 
