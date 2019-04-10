@@ -5,32 +5,32 @@ config={
         "position":13,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
-            "topic":"IST/PV_1"
+            "host":"192.168.99.100",
+            "topic":"IST/P_PV_1"
         }
     },
     "PV_2":{
     "position":14,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
-            "topic":"IST/PV_2"
+            "host":"192.168.99.100",
+            "topic":"IST/P_PV_2"
         }
     },
     "PV_3":{
     "position":15,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
-            "topic":"IST/PV_3"
+            "host":"192.168.99.100",
+            "topic":"IST/P_PV_3"
         }
     },
     "PV_4":{
 "position":16,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
-            "topic":"IST/PV_4"
+            "host":"192.168.99.100",
+            "topic":"IST/P_PV_4"
         }
     }},
     "SoC":{
@@ -38,7 +38,7 @@ config={
 "position":17,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
+            "host":"192.168.99.100",
             "topic":"IST/SoC_1"
         }
     },
@@ -46,7 +46,7 @@ config={
 "position":18,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
+            "host":"192.168.99.100",
             "topic":"IST/SoC_2"
         }
     },
@@ -54,7 +54,7 @@ config={
 "position":19,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
+            "host":"192.168.99.100",
             "topic":"IST/SoC_3"
         }
     },
@@ -62,7 +62,7 @@ config={
 "position":20,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
+            "host":"192.168.99.100",
             "topic":"IST/SoC_4"
         }
     }},
@@ -72,32 +72,32 @@ config={
 "position":56,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
-            "topic":"IST/SW_1"
+            "host":"192.168.99.100",
+            "topic":"IST/Sd_1"
         }
     },
     "SW_2":{
 "position":57,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
-            "topic":"IST/SW_2"
+            "host":"192.168.99.100",
+            "topic":"IST/Sd_2"
         }
     },
     "SW_3":{
 "position":58,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
-            "topic":"IST/SW_2"
+            "host":"192.168.99.100",
+            "topic":"IST/Sd_3"
         }
     },
     "SW_4":{
 "position":59,
         "mqtt":{
             "qos":1,
-            "host":"localhost",
-            "topic":"IST/SW_4"
+            "host":"192.168.99.100",
+            "topic":"IST/Sd_4"
         }
     }
     }

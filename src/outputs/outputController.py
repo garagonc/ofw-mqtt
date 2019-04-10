@@ -6,7 +6,7 @@ import time
 #from senml import senml
 import senml as senml
 
-from communications.MQTTClient import MQTTClient
+from src.communications.MQTTClient import MQTTClient
 
 
 logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s: %(message)s', level=logging.DEBUG)

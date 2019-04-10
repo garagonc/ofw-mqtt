@@ -6,7 +6,7 @@ config={
             "position":1,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/SoC_1"
             }
         },
@@ -14,7 +14,7 @@ config={
             "position":2,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/SoC_2"
             }
         },
@@ -22,7 +22,7 @@ config={
             "position":3,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/SoC_3"
             }
         },
@@ -30,7 +30,7 @@ config={
             "position":4,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/SoC_4"
             }
         }
@@ -40,7 +40,7 @@ config={
             "position":9,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Sd_1"
             }
         },
@@ -48,7 +48,7 @@ config={
             "position":10,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Sd_2"
             }
         },
@@ -56,7 +56,7 @@ config={
             "position":11,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Sd_3"
             }
         },
@@ -64,7 +64,7 @@ config={
             "position":12,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Sd_4"
             }
         }
@@ -74,7 +74,7 @@ config={
             "position":5,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Sc_1"
             }
         },
@@ -82,7 +82,7 @@ config={
             "position":6,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Sc_2"
             }
         },
@@ -90,7 +90,7 @@ config={
             "position":7,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Sc_3"
             }
         },
@@ -98,7 +98,7 @@ config={
             "position":8,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Sc_4"
             }
         }
@@ -108,7 +108,7 @@ config={
             "position":13,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_inv_1"
             }
         },
@@ -116,7 +116,7 @@ config={
             "position":14,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_inv_2"
             }
         },
@@ -124,7 +124,7 @@ config={
             "position":15,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_inv_3"
             }
         },
@@ -132,7 +132,7 @@ config={
             "position":16,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_inv_4"
             }
         }
@@ -142,7 +142,7 @@ config={
             "position":17,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_inv_1"
             }
         },
@@ -150,7 +150,7 @@ config={
             "position":18,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_inv_2"
             }
         },
@@ -158,7 +158,7 @@ config={
             "position":19,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_inv_3"
             }
         },
@@ -166,7 +166,7 @@ config={
             "position":20,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_inv_4"
             }
         }
@@ -176,7 +176,7 @@ config={
             "position":21,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/V_1"
             }
         },
@@ -184,7 +184,7 @@ config={
             "position":22,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/V_2"
             }
         },
@@ -192,7 +192,7 @@ config={
             "position":23,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/V_3"
             }
         },
@@ -200,7 +200,7 @@ config={
             "position":24,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/V_4"
             }
         }
@@ -210,7 +210,7 @@ config={
             "position":25,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_Load_1"
             }
         },
@@ -218,7 +218,7 @@ config={
             "position":26,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_Load_2"
             }
         },
@@ -226,7 +226,7 @@ config={
             "position":27,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_Load_3"
             }
         },
@@ -234,7 +234,7 @@ config={
             "position":28,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_Load_4"
             }
         }
@@ -244,7 +244,7 @@ config={
             "position":29,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_Load_1"
             }
         },
@@ -252,7 +252,7 @@ config={
             "position":30,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_Load_2"
             }
         },
@@ -260,7 +260,7 @@ config={
             "position":31,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_Load_3"
             }
         },
@@ -268,7 +268,7 @@ config={
             "position":32,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_Load_4"
             }
         }
@@ -278,7 +278,7 @@ config={
             "position":33,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_PV_1"
             }
         },
@@ -286,7 +286,7 @@ config={
             "position":34,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_PV_2"
             }
         },
@@ -294,7 +294,7 @@ config={
             "position":35,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_PV_3"
             }
         },
@@ -302,7 +302,7 @@ config={
             "position":36,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/P_PV_4"
             }
         }
@@ -312,7 +312,7 @@ config={
             "position":37,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_PV_1"
             }
         },
@@ -320,7 +320,7 @@ config={
             "position":38,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_PV_2"
             }
         },
@@ -328,7 +328,7 @@ config={
             "position":39,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_PV_3"
             }
         },
@@ -336,7 +336,7 @@ config={
             "position":40,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/Q_PV_4"
             }
         }
@@ -346,7 +346,7 @@ config={
             "position":41,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/va_1"
             }
         },
@@ -354,7 +354,7 @@ config={
             "position":42,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/va_2"
             }
         },
@@ -362,7 +362,7 @@ config={
             "position":43,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/va_3"
             }
         },
@@ -370,7 +370,7 @@ config={
             "position":44,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/va_4"
             }
         }
@@ -380,7 +380,7 @@ config={
             "position":45,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/BRKi_1"
             }
         },
@@ -388,7 +388,7 @@ config={
             "position":46,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/BRKi_2"
             }
         },
@@ -396,7 +396,7 @@ config={
             "position":47,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/BRKi_3"
             }
         },
@@ -404,7 +404,7 @@ config={
             "position":48,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/BRKi_4"
             }
         }
@@ -414,7 +414,7 @@ config={
             "position":49,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/m_1"
             }
         },
@@ -422,7 +422,7 @@ config={
             "position":50,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/m_2"
             }
         },
@@ -430,7 +430,7 @@ config={
             "position":51,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/m_3"
             }
         },
@@ -438,7 +438,7 @@ config={
             "position":52,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/m_4"
             }
         }
@@ -448,7 +448,7 @@ config={
             "position":55,
             "mqtt":{
                 "qos":1,
-                "host":"localhost",
+                "host":"192.168.99.100",
                 "topic":"IST/SoC_Ref"
             }
         }

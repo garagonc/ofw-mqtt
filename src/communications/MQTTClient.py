@@ -5,39 +5,41 @@ import time
 logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s: %(message)s', level=logging.DEBUG)
 logger = logging.getLogger(__file__)
 
+
 class MQTTClient:
-    def __init__(self, host, mqttPort, client_id, keepalive=60, username=None, password=None, ca_cert_path=None, set_insecure=False):
-        self.host =host
+    def __init__(self, host, mqttPort, client_id, keepalive=60, username=None, password=None, ca_cert_path=None,
+                 set_insecure=False):
+        self.host = host
         self.port = int(mqttPort)
-        self.keepalive=keepalive
+        self.keepalive = keepalive
         self.receivedMessages = []
         self.topic_ack_wait = []
         self.callback_function = None
         self.client_id = client_id
         self.client = mqtt.Client(client_id)
         if username is not None and password is not None:
-            logger.debug("u "+username+" p "+password)
+            logger.debug("u " + username + " p " + password)
             self.client.username_pw_set(username, password)
         if ca_cert_path is not None and len(ca_cert_path) > 0:
             logger.debug("ca " + ca_cert_path)
             self.client.tls_set(ca_certs=ca_cert_path)
-            logger.debug("insec "+str(set_insecure))
+            logger.debug("insec " + str(set_insecure))
             self.client.tls_insecure_set(set_insecure)
         self.client.on_message = self.on_message
         self.client.on_publish = self.on_publish
         self.client.on_connect = self.on_connect
         self.client.on_subscribe = self.on_subscribe
 
-        logger.info("Trying to connect to the MQTT broker "+str(self.host)+" "+str(self.port))
+        logger.info("Trying to connect to the MQTT broker " + str(self.host) + " " + str(self.port))
         try:
             self.client.connect(self.host, self.port, self.keepalive)
 
         except Exception as e:
-            msg = "Invalid MQTT host "+str(self.host)+" "+str(self.port)
-            logger.error("Error connecting client "+str(self.host)+" "+str(self.port) + " " + str(e))
+            msg = "Invalid MQTT host " + str(self.host) + " " + str(self.port)
+            logger.error("Error connecting client " + str(self.host) + " " + str(self.port) + " " + str(e))
             raise InvalidMQTTHostException(msg)
 
-        #self.client.loop_forever()
+        # self.client.loop_forever()
         self.client.loop_start()
 
         # Blocking call that processes network traffic, dispatches callbacks and
@@ -45,20 +47,17 @@ class MQTTClient:
         # Other loop*() functions are available that give a threaded interface and a
         # manual interface.
 
-
     def on_connect(self, client, userdata, flags, rc):
         logger.info("Connected with result code " + str(rc))
-        #if rc == 0:
+        # if rc == 0:
         logger.info("Connected to the broker")
 
-
-    def on_message(self,client, userdata, message):
+    def on_message(self, client, userdata, message):
         self.callback_function(message.payload.decode())
-
 
     def sendResults(self, topic, data, qos):
         try:
-            logger.debug("Sending results to this topic: "+topic)
+            logger.debug("Sending results to this topic: " + topic)
             self.publish(topic, data, False, qos)
             logger.debug("Results published")
         except Exception as e:
@@ -68,10 +67,10 @@ class MQTTClient:
         mid = self.client.publish(topic, message, qos)[1]
         if (waitForAck):
             while mid not in self.receivedMessages:
-                logger.debug("waiting for pub ack for topic "+str(topic))
+                logger.debug("waiting for pub ack for topic " + str(topic))
                 time.sleep(0.25)
 
-    def on_publish(self,client, userdata, mid):
+    def on_publish(self, client, userdata, mid):
         self.receivedMessages.append(mid)
 
     def MQTTExit(self):
@@ -87,9 +86,10 @@ class MQTTClient:
             logger.info("Subscribing to topics with qos: " + str(topics_qos))
             result, mid = self.client.subscribe(topics_qos)
             if result == 0:
-                logger.debug("Subscribed to topics: "+ str(topics_qos) + " result = " + str(result) + " , mid = " + str(mid))
+                logger.debug(
+                    "Subscribed to topics: " + str(topics_qos) + " result = " + str(result) + " , mid = " + str(mid))
                 self.topic_ack_wait.append(tuple([str(topics_qos), mid]))
-                logger.debug("sub ack wait = "+str(self.topic_ack_wait))
+                logger.debug("sub ack wait = " + str(self.topic_ack_wait))
                 self.callback_function = callback_function
                 logging.info("callback functions set")
             else:
@@ -110,9 +110,9 @@ class MQTTClient:
             if len(self.topic_ack_wait) == 0:
                 return True
             else:
-                logger.info("topic ack wait len = "+str(len(self.topic_ack_wait)))
+                logger.info("topic ack wait len = " + str(len(self.topic_ack_wait)))
             time.sleep(1)
-            count+=1
+            count += 1
         self.topic_ack_wait.pop()
         return False
 

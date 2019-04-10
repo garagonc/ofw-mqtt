@@ -30,7 +30,7 @@ class DataReceiver(ABC):
         self.topics = None
         self.port = None
         self.host_params = {}
-
+        self.topic_name = None
         self.setup()
 
         self.init_mqtt(self.topics)
@@ -48,6 +48,7 @@ class DataReceiver(ABC):
             for k, v in self.topic_params.items():
                 if k == "topic":
                     topic_qos.append((v,1))
+                    self.topic_name = v
                 elif k == "port":
                     self.port = v
                 elif k == "host":
@@ -91,7 +92,7 @@ class DataReceiver(ABC):
         if require_updated == 1 and not self.data:
             require_updated = 0
         while require_updated == 0 and not self.data_update and not self.stop_request:
-            logger.debug("wait for data")
+            logger.debug("wait for data " + self.topic_name)
             time.sleep(0.5)
         return self.get_and_update_data(clearData)
 
@@ -121,5 +122,4 @@ class DataReceiver(ABC):
         data = {}
         if self.channel == "MQTT":
             data = self.get_mqtt_data(require_updated, clearData)
-
         return data
